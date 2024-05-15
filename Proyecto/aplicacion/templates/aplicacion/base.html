@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>{% block title %}Supermercado ChangoMenos{% endblock %}</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         .header-container {
             background-color: blue;
             color: white;
@@ -15,6 +14,23 @@
         h1 {
             margin: 0;
         }
+
+       
+        ul {
+            list-style-type: none; 
+            padding: 0;
+            text-align: center; 
+        }
+        li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        li a {
+            font-size: 20px;
+            text-decoration: none;
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -22,5 +38,15 @@
         {% block content %}
         {% endblock %}
     </div>
+    <ul>
+        <li><a href="{% url 'buscar_producto' %}">Buscar Producto</a></li>
+        <li><a href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
+        <li><a href="{% url 'agregar_marca' %}">Agregar Marca</a></li>
+        <li><a href="{% url 'agregar_stock' %}">Agregar Stock</a></li> 
+        <li><a href="{% url 'eliminar_producto' producto.id %}">Eliminar Producto</a></li>
+        <li><a href="{% url 'eliminar_marca' marca.id %}">Eliminar Marca</a></li>
+        <li><a href="{% url 'eliminar_stock' stock.id %}">Eliminar Stock</a></li>
+    </ul>
 </body>
 </html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Stock</title>
+</head>
+<body>
+    <h1>Eliminar Stock</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="marca">Selecciona una marca:</label>
+        <select name="marca" id="marca">
+            {% for stock in stocks %}
+                <option value="{{ stock.marca.id }}">{{ stock.marca.nombre }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="cantidad">Cantidad a eliminar:</label>
+        <input type="number" name="cantidad" id="cantidad" min="0">
+        <br>
+        <button type="submit">Eliminar Stock</button>
+    </form>
+</body>
+</html>
+
+
