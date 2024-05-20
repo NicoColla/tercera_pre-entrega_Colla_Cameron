@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Eliminar Producto</title>
-</head>
-<body>
+{% extends 'aplicacion/base.html' %}
+
+{% block title %}Eliminar Producto{% endblock %}
+
+{% block content %}
     <h1>Eliminar Producto</h1>
-    <form action="{% url 'eliminar_producto' producto.id %}" method="post">
+    <form method="post">
         {% csrf_token %}
         <label for="producto">Selecciona un producto:</label>
         <select name="producto_id" id="producto">
@@ -16,5 +14,4 @@
         </select>
         <input type="submit" value="Eliminar">
     </form>
-</body>
-</html>
+{% endblock %}

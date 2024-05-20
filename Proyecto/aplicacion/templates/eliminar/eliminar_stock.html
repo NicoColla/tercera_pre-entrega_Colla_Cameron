@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Eliminar Stock</title>
-</head>
-<body>
+{% extends 'aplicacion/base.html' %}
+
+{% block title %}Eliminar Stock{% endblock %}
+
+{% block content %}
     <h1>Eliminar Stock</h1>
     <form method="post">
         {% csrf_token %}
-        <label for="marca">Selecciona una marca:</label>
-        <select name="marca" id="marca">
+        <label for="stock">Selecciona un stock:</label>
+        <select name="stock_id" id="stock">
             {% for stock in stocks %}
-                <option value="{{ stock.marca.id }}">{{ stock.marca.nombre }}</option>
+                <option value="{{ stock.id }}">{{ stock.marca.nombre }}</option>
             {% endfor %}
         </select>
         <br>
@@ -20,7 +18,7 @@
         <br>
         <button type="submit">Eliminar Stock</button>
     </form>
-</body>
-</html>
+{% endblock %}
+
 
 

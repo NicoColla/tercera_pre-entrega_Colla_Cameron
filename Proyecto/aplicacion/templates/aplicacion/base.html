@@ -39,14 +39,13 @@
         {% endblock %}
     </div>
     <ul>
-        <li><a href="{% url 'buscar_producto' %}">Buscar Producto</a></li>
+        <li><a href="{% url 'buscar' %}">Buscar</a></li>
         <li><a href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
         <li><a href="{% url 'agregar_marca' %}">Agregar Marca</a></li>
-        <li><a href="{% url 'agregar_stock' %}">Agregar Stock</a></li> 
-        <li><a href="{% url 'eliminar_producto' producto.id %}">Eliminar Producto</a></li>
-        <li><a href="{% url 'eliminar_marca' marca.id %}">Eliminar Marca</a></li>
-        <li><a href="{% url 'eliminar_stock' stock.id %}">Eliminar Stock</a></li>
-    </ul>
+        <li><a href="{% url 'agregar_stock' %}">Agregar Stock</a></li>
+        <li><a href="{% url 'eliminar_producto' %}">Eliminar Producto</a></li>
+        <li><a href="{% url 'eliminar_marca' %}">Eliminar Marca</a></li>
+        <li><a href="{% url 'eliminar_stock' %}">Eliminar Stock</a></li>
+    </ul>    
 </body>
 </html>
-

@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Eliminar Marca</title>
-</head>
-<body>
+{% extends 'aplicacion/base.html' %}
+
+{% block title %}Eliminar Marca{% endblock %}
+
+{% block content %}
     <h1>Eliminar Marca</h1>
-    <form action="{% url 'eliminar_marca' marca.id %}" method="post">
+    <form method="post">
         {% csrf_token %}
         <label for="marca">Selecciona una marca:</label>
         <select name="marca_id" id="marca">
@@ -16,6 +14,5 @@
         </select>
         <input type="submit" value="Eliminar">
     </form>
-</body>
-</html>
+{% endblock %}
 
